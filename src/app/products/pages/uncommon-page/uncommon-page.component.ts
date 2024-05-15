@@ -10,6 +10,7 @@ export class UncommonPageComponent {
   //i18n Select
   public name: string = 'Fernando';
   public gender: 'male' | 'female' = 'male';
+
   public invitationMap = {
     male: 'invitarlo',
     female: 'invitarla'
@@ -18,6 +19,20 @@ export class UncommonPageComponent {
   changeClient():void{
     this.name = 'Melissa';
     this.gender = 'female';
+  }
+
+  //i18inplural
+  public clients: string[] = ['Maria','Pedro','Fernando', 'Hernando', 'Eduardo' , 'Melissa', 'Natalia']
+  public clientsMap = {
+    '=0': 'no tenemos ningún cliente esperando',
+    '=1': 'tenemos un cliente esperando',
+    '=2': 'tenemos dos clientes esperando',
+    'other': 'tenemos # clientes esperando',
+  }
+
+
+  deleteClient():void{
+    this.clients.shift();
   }
 
 }
